@@ -9,10 +9,10 @@
 
 ### terminal/shells 
 - zsh, oh-my-zsh (`./.oh-my-zsh`)
-- starship
+- starship + bat (a better cat)
 - `source alias.zsh`
 - kitty (`~/.config/kitty/kitty.conf`) monokai pro theme
 
 ### others
 - ssh conf
-- yabai
+- yabai + skhd
