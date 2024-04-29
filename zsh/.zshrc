@@ -3,7 +3,8 @@ autoload -Uz vcs_info
 precmd() { vcs_info }
 zstyle ':vcs_info:git:*' formats '%b '
 setopt PROMPT_SUBST
-PROMPT='%F{green}%*%f [%F{blue}%C%f] %F{red}${vcs_info_msg_0_}%f> '
+NEWLINE=$'\n'
+PROMPT='${NEWLINE}%F{green}%*%f [%F{blue}%C%f] %F{red}${vcs_info_msg_0_}%f${NEWLINE}> '
 
 # env variables
 export PF_ASCII="Catppuccin"
