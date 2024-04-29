@@ -1,0 +1,6 @@
+[user]
+	name = Benn Tan
+	email = btjm123@gmail.com
+[core]
+	editor = vim
+	pager = git delta
