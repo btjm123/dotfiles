@@ -16,6 +16,8 @@ alias kittyconf="code ~/.config/kitty/kitty.conf"
 alias kittytheme="kitty +kitten themes"
 alias zshrc="code ~/.zshrc"
 alias reload='source ~/.zshrc;echo "ZSH aliases sourced."'
+alias byeyabai="yabai --stop-service && skhd --stop-service"
+alias hiyabai="byeyabai && yabai --start-service && skhd --start-service"
 
 # temporary as im adding config
 alias cpzshrc="cd ~/Desktop/personal/dotfiles && cp ~/.zshrc ./zsh/.zshrc"
