@@ -16,3 +16,4 @@
 ### others
 - ssh conf
 - yabai + skhd
+- [https://github.com/DinkDonk/kitty-icon](kitty-icon)
