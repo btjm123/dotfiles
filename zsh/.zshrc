@@ -5,6 +5,9 @@ zstyle ':vcs_info:git:*' formats '%b '
 setopt PROMPT_SUBST
 PROMPT='%F{green}%*%f [%F{blue}%C%f] %F{red}${vcs_info_msg_0_}%f> '
 
+# env variables
+export PF_ASCII="Catppuccin"
+
 # shortcuts
 alias ls="ls -lAhvf"
 alias kittyconf="code ~/.config/kitty/kitty.conf"
@@ -19,4 +22,6 @@ alias cpkittyconf="cd ~/Desktop/personal/dotfiles && cp ~/.config/kitty/kitty.co
 # load required dependancies
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
+# custom commands to run on start
 cd ~/Desktop
+pfetch

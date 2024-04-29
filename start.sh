@@ -8,4 +8,9 @@ brew install zsh-autosuggestions
 brew install bat
 brew install git-delta
 
+# is there a better way of doing this ?
+git clone https://github.com/GuardKenzie/pfetch-with-kitties.git
+sudo install pfetch-with-kitties/pfetch /usr/local/bin/
+rm -rf pfetch-with-kitties
+
 # nvim config stuff
