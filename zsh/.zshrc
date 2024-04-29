@@ -10,7 +10,8 @@ PROMPT='${NEWLINE}%F{green}%*%f [%F{blue}%C%f] %F{red}${vcs_info_msg_0_}%f${NEWL
 export PF_ASCII="Catppuccin"
 
 # shortcuts
-alias ls="ls -lAhvf"
+alias ls="eza -l --icons"
+alias lsf="eza -TL 3"
 alias kittyconf="code ~/.config/kitty/kitty.conf"
 alias kittytheme="kitty +kitten themes"
 alias zshrc="code ~/.zshrc"
