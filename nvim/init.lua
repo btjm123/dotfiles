@@ -4,6 +4,8 @@ vim.g.loaded_netrwPlugin = 1
 vim.opt.termguicolors = true
 vim.g.mapleader = ' '
 vim.opt.number = true
+vim.opt.tabstop = 2
+vim.opt.shiftwidth = 2
 -- nnoremap <c-P> <cmd>lua require('fzf-lua').files()<CR>
 vim.keymap.set("n", "<c-S>", ":w<CR>", { silent = true })
 vim.keymap.set("n", "<c-P>", "<cmd>lua require('fzf-lua').files()<CR>", { silent = true })
