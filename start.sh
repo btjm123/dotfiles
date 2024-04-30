@@ -24,3 +24,4 @@ sudo install pfetch-with-kitties/pfetch /usr/local/bin/
 rm -rf pfetch-with-kitties
 
 # nvim config stuff
+brew install nvim fzf ripgrep
