@@ -7,7 +7,7 @@ vim.opt.number = true
 -- nnoremap <c-P> <cmd>lua require('fzf-lua').files()<CR>
 vim.keymap.set("n", "<c-S>", ":w<CR>", { silent = true })
 vim.keymap.set("n", "<c-P>", "<cmd>lua require('fzf-lua').files()<CR>", { silent = true })
-vim.keymap.set("n", "<leader>ff", "<cmd>lua require('fzf-lua').grep()<CR>", { silent = true })
+vim.keymap.set("n", "<leader>rg", "<cmd>lua require('fzf-lua').grep()<CR>", { silent = true })
 vim.keymap.set("n", "<leader>gs", "<cmd>lua requi:qre('fzf-lua').git_status()<CR>", { silent = true })
 
 -- Set up lazy.nvim package manager
