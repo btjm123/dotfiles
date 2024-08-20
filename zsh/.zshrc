@@ -7,6 +7,7 @@ NEWLINE=$'\n'
 PROMPT='${NEWLINE}%F{green}%*%f [%F{blue}%C%f] %F{red}${vcs_info_msg_0_}%f${NEWLINE}> '
 
 # env variables
+export TERM="xterm-256color"
 export PF_ASCII="Catppuccin"
 
 # shortcuts
