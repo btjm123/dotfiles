@@ -25,6 +25,10 @@ alias startyabai="yabai --start-service && skhd --start-service"
 alias cpzshrc="cd ~/Desktop/personal/dotfiles && cp ~/.zshrc ./zsh/.zshrc"
 alias cpkittyconf="cd ~/Desktop/personal/dotfiles && cp ~/.config/kitty/kitty.conf ./kitty/kitty.conf"
 
+# cs2030s stuff
+alias syncvim="rsync -avz btjm123@pe112.comp.nus.edu.sg:~/.vimrc ~/Desktop/dotfiles/vim/.vimrc"
+alias sshjava="ssh btjm123@pe112.comp.nus.edu.sg"
+
 # load required dependancies
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
