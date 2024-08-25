@@ -21,6 +21,10 @@ alias reload='source ~/.zshrc;echo "ZSH aliases sourced."'
 alias stopyabai="yabai --stop-service && skhd --stop-service"
 alias startyabai="yabai --start-service && skhd --start-service"
 
+alias startpsql='brew services start postgresql@14'
+alias stoppsql='brew services stop postgresql@14'
+alias restartpsql='brew services restart postgresql@14'
+alias statuspsql='brew services list | grep postgres@14'
 # temporary as im adding config
 alias cpzshrc="cd ~/Desktop/personal/dotfiles && cp ~/.zshrc ./zsh/.zshrc"
 alias cpkittyconf="cd ~/Desktop/personal/dotfiles && cp ~/.config/kitty/kitty.conf ./kitty/kitty.conf"

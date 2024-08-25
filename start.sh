@@ -23,5 +23,8 @@ git clone https://github.com/GuardKenzie/pfetch-with-kitties.git
 sudo install pfetch-with-kitties/pfetch /usr/local/bin/
 rm -rf pfetch-with-kitties
 
+# useful commands: https://github.com/orgs/Homebrew/discussions/4568
+brew install postgresql@14
+
 # nvim config stuff
 brew install nvim fzf ripgrep
