@@ -28,3 +28,6 @@ brew install postgresql@14
 
 # nvim config stuff
 brew install nvim fzf ripgrep
+
+# atuin
+curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh
