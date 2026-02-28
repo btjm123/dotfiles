@@ -9,6 +9,8 @@ PROMPT='${NEWLINE}%F{green}%*%f [%F{blue}%C%f] %F{red}${vcs_info_msg_0_}%f${NEWL
 # env variables
 export TERM="xterm-256color"
 export PF_ASCII="Catppuccin"
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 # shortcuts
 alias ls="eza -l --icons"
@@ -33,8 +35,20 @@ alias cpkittyconf="cd ~/Desktop/personal/dotfiles && cp ~/.config/kitty/kitty.co
 alias syncvim="rsync -avz btjm123@pe112.comp.nus.edu.sg:~/.vimrc ~/Desktop/dotfiles/vim/.vimrc"
 alias sshjava="ssh btjm123@pe112.comp.nus.edu.sg"
 
+# cs4222 stuff
+unalias make_texas 2>/dev/null
+make_texas() {
+	make TARGET=cc26x0-cc13x0 BOARD=sensortag/cc2650 "$@"
+} 
+alias ls_texas=" ls /dev/tty* | grep usb"
+
 # load required dependancies
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init - zsh)"
+export PATH="$(brew --prefix make)/libexec/gnubin:$PATH"
 
 # custom commands to run on start
 cd ~/Desktop
