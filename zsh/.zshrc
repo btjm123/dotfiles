@@ -12,6 +12,10 @@ export PF_ASCII="Catppuccin"
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
+# zoxide
+eval "$(zoxide init zsh --hook prompt)"
+alias cd='z'
+
 # shortcuts
 alias ls="eza -l --icons"
 alias lsf="eza -TL 3"
