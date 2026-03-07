@@ -1,19 +1,19 @@
 # zsh prompt customisation
 autoload -Uz vcs_info
 precmd() { vcs_info }
-zstyle ':vcs_info:git:*' formats '%b '
+zstyle ':vcs_info:git:*' formats ' %b'
 setopt PROMPT_SUBST
 NEWLINE=$'\n'
 PROMPT_PATH='%~'
 # short for togglepath
 tp() {
   if [[ "$PROMPT_PATH" == "%~" ]]; then
-    PROMPT_PATH="%c"
+    PROMPT_PATH=" %c"
   else
     PROMPT_PATH="%~"
   fi
 }
-PROMPT='${NEWLINE}%F{green}%*%f [%F{blue}${PROMPT_PATH}%f] %F{red}${vcs_info_msg_0_}%f${NEWLINE}> '
+PROMPT='${NEWLINE}%F{green}%*%f [%F{blue}${PROMPT_PATH}%f] %F{red}${vcs_info_msg_0_}%f${NEWLINE}%F{blue}❯%f '
 
 # env variables
 export TERM="xterm-256color"
@@ -66,4 +66,4 @@ export PATH="$(brew --prefix make)/libexec/gnubin:$PATH"
 
 # custom commands to run on start
 cd ~/Desktop
-pfetch
+ pfetch
