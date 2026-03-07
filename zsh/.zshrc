@@ -4,13 +4,23 @@ precmd() { vcs_info }
 zstyle ':vcs_info:git:*' formats '%b '
 setopt PROMPT_SUBST
 NEWLINE=$'\n'
-PROMPT='${NEWLINE}%F{green}%*%f [%F{blue}%C%f] %F{red}${vcs_info_msg_0_}%f${NEWLINE}> '
+PROMPT_PATH='%~'
+# short for togglepath
+tp() {
+  if [[ "$PROMPT_PATH" == "%~" ]]; then
+    PROMPT_PATH="%c"
+  else
+    PROMPT_PATH="%~"
+  fi
+}
+PROMPT='${NEWLINE}%F{green}%*%f [%F{blue}${PROMPT_PATH}%f] %F{red}${vcs_info_msg_0_}%f${NEWLINE}> '
 
 # env variables
 export TERM="xterm-256color"
 export PF_ASCII="Catppuccin"
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+export _ZO_ECHO=1
 
 # zoxide
 eval "$(zoxide init zsh --hook prompt)"
