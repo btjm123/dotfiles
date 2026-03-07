@@ -9,6 +9,14 @@ brew install bat
 brew install git-delta
 brew install eza
 
+# install fonts
+if fc-list | grep -iq "Fira Mono Nerd Font"; then
+  echo "Fira Mono Nerd Font is already installed."
+else
+  brew install --cask font-fira-mono-nerd-font
+  echo "Installing Fira Mono Nerd Font..."
+fi
+
 # windows tiling manager
 brew install koekeishiya/formulae/skhd
 brew install koekeishiya/formulae/yabai
