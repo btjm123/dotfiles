@@ -37,6 +37,10 @@ brew install postgresql@14
 # nvim config stuff
 brew install nvim fzf ripgrep
 
+# networking tools
+brew install nmap
+brew install arp-scan
+
 # additional tools
 curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh
 brew install yazi

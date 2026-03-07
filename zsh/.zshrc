@@ -25,6 +25,7 @@ export _ZO_ECHO=1
 # zoxide
 eval "$(zoxide init zsh --hook prompt)"
 alias cd='z'
+alias cdi='zi'
 
 # shortcuts
 alias ls="eza -l --icons"
