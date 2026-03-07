@@ -65,5 +65,8 @@ eval "$(pyenv init - zsh)"
 export PATH="$(brew --prefix make)/libexec/gnubin:$PATH"
 
 # custom commands to run on start
-cd ~/Desktop
- pfetch
+# Kitty starts shell in $HOME which implies a new terminal window instance
+if [[ "$PWD" == "$HOME" ]]; then
+  cd ~/Desktop
+fi
+pfetch
