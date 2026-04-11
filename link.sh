@@ -24,6 +24,6 @@ rm ~/.vimrc
 ln -s ~/Desktop/dotfiles/vim/.vimrc ~/.vimrc
 
 rm ~/.zoxide.zsh
-ln -s ~/Desktop/dotfiles/zsh/.zoxide.zsh ~/.zoxide.zsh
+ln -s ~/Desktop/dotfiles/zoxide/.zoxide.zsh ~/.zoxide.zsh
 
 
