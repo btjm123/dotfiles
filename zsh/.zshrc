@@ -1,8 +1,8 @@
 # zsh prompt customisation
 autoload -Uz vcs_info
-precmd() { vcs_info }
 zstyle ':vcs_info:git:*' formats ' %b'
 zstyle ':vcs_info:*' enable git
+precmd() { vcs_info }
 setopt PROMPT_SUBST
 NEWLINE=$'\n'
 PROMPT_PATH='%~'
@@ -19,8 +19,14 @@ PROMPT='${NEWLINE}%F{green}%*%f [%F{blue}${PROMPT_PATH}%f] %F{red}${vcs_info_msg
 # env variables
 export TERM="xterm-256color"
 export PF_ASCII="Catppuccin"
+
+# from profiling, sourcing sdkman-unit.sh seems to be slow so let's lazy load this too
 export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+sdk() {
+  unset -f sdk
+  [[ -s "$SDKMAN_DIR/bin/sdkman-init.sh" ]] && source "$SDKMAN_DIR/bin/sdkman-init.sh"
+  sdk "$@"
+}
 export _ZO_ECHO=1
 
 # zoxide
@@ -60,7 +66,7 @@ make_texas() {
 alias ls_texas=" ls /dev/tty* | grep usb"
 
 # load required dependancies
-source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Hugo Version Manager: override path to the hugo executable.
 export PATH="$HOME/go/bin:$PATH"
