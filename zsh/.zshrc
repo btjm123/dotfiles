@@ -2,6 +2,7 @@
 autoload -Uz vcs_info
 precmd() { vcs_info }
 zstyle ':vcs_info:git:*' formats ' %b'
+zstyle ':vcs_info:*' enable git
 setopt PROMPT_SUBST
 NEWLINE=$'\n'
 PROMPT_PATH='%~'
@@ -23,7 +24,7 @@ export SDKMAN_DIR="$HOME/.sdkman"
 export _ZO_ECHO=1
 
 # zoxide
-eval "$(zoxide init zsh --hook prompt)"
+source ~/.zoxide.zsh
 alias cd='z'
 alias cdi='zi'
 
@@ -37,6 +38,7 @@ alias zshrc="code ~/.zshrc"
 alias reload='source ~/.zshrc;echo "ZSH aliases sourced."'
 alias stopyabai="yabai --stop-service && skhd --stop-service"
 alias startyabai="yabai --start-service && skhd --start-service"
+alias findfile='FILE=$(fzf) && [ -n "$FILE" ] && open -R "$FILE"'
 
 alias startpsql='brew services start postgresql@14'
 alias stoppsql='brew services stop postgresql@14'
@@ -60,10 +62,29 @@ alias ls_texas=" ls /dev/tty* | grep usb"
 # load required dependancies
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-export PYENV_ROOT="$HOME/.pyenv"
-[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init - zsh)"
-export PATH="$(brew --prefix make)/libexec/gnubin:$PATH"
+# Hugo Version Manager: override path to the hugo executable.
+export PATH="$HOME/go/bin:$PATH"
+hugo() {
+  hvm_show_status=true
+  if hugo_bin=$(hvm status --printExecPathCached); then
+    if [ "${hvm_show_status}" = "true" ]; then
+      >&2 printf "Hugo version management is enabled in this directory.\\n"
+      >&2 printf "Run 'hvm status' for details, or 'hvm disable' to disable.\\n\\n"
+    fi
+  else
+    if hugo_bin=$(hvm status --printExecPath); then
+      if ! hvm use --useVersionInDotFile; then
+        return 1
+      fi
+    else
+      if ! hugo_bin=$(whence -p hugo); then
+        >&2 printf "Command not found.\\n"
+        return 1
+      fi
+    fi
+  fi
+  "${hugo_bin}" "$@"
+}
 
 # custom commands to run on start
 # Kitty starts shell in $HOME which implies a new terminal window instance
