@@ -23,4 +23,7 @@ ln -s ~/Desktop/dotfiles/yabai/* ~/.config/yabai/
 rm ~/.vimrc
 ln -s ~/Desktop/dotfiles/vim/.vimrc ~/.vimrc
 
+rm ~/.zoxide.zsh
+ln -s ~/Desktop/dotfiles/zsh/.zoxide.zsh ~/.zoxide.zsh
+
 
