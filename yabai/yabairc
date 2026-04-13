@@ -22,6 +22,8 @@ yabai -m rule --add app="^LICEcap$" manage=off
 yabai -m rule --add app="^licecap$" manage=off
 yabai -m rule --add app="^MacDown$" manage=off
 yabai -m rule --add app="^FortiClient$" manage=off
+yabai -m rule --add app="^Loom$" manage=off
 
 # re-enable window borders!
-borders active_color=0xffff3050 inactive_color=0xffaaaaaa width=6.0 &
+borders active_color=0xffff3050 inactive_color=0xffaaaaaa width=6.0 \
+        blacklist="System Settings,Archive Utility,Calculator,Dictionary,Finder,LICEcap,licecap,MacDown,FortiClient,Loom"
