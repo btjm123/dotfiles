@@ -50,3 +50,5 @@ brew install ffmpeg
 brew install imagemagick
 brew install --cask raycast
 brew install zoxide
+brew install tree
+brew install --cask miniconda
