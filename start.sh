@@ -52,3 +52,9 @@ brew install --cask raycast
 brew install zoxide
 brew install tree
 brew install --cask miniconda
+
+# my ai phase
+curl -fsSL https://ollama.com/install.sh | sh
+
+# libre office, useful for microsoft office
+brew install --cask libreoffice

@@ -115,3 +115,4 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+export KMP_DUPLICATE_LIB_OK=TRUE
