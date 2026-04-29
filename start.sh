@@ -56,5 +56,7 @@ brew install --cask miniconda
 # my ai phase
 curl -fsSL https://ollama.com/install.sh | sh
 
-# libre office, useful for microsoft office
+# utilities to index school documents
 brew install --cask libreoffice
+brew install ocrmypdf
+brew install tesseract
